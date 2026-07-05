@@ -1,1 +1,52 @@
+import java.util.Scanner;
 
+class Student {
+    String name;
+    int regNo;
+    int mark1, mark2, mark3;
+    int sum;
+    double average;
+
+    void get() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Student Name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter Register Number: ");
+        regNo = sc.nextInt();
+
+        System.out.print("Enter Mark 1: ");
+        mark1 = sc.nextInt();
+
+        System.out.print("Enter Mark 2: ");
+        mark2 = sc.nextInt();
+
+        System.out.print("Enter Mark 3: ");
+        mark3 = sc.nextInt();
+    }
+
+    void calculate() {
+        sum = mark1 + mark2 + mark3;
+        average = sum / 3.0;
+    }
+
+    void display() {
+        System.out.println("\n----- Student Details -----");
+        System.out.println("Student Name : " + name);
+        System.out.println("Register No  : " + regNo);
+        System.out.println("Mark 1       : " + mark1);
+        System.out.println("Mark 2       : " + mark2);
+        System.out.println("Mark 3       : " + mark3);
+        System.out.println("Total Marks  : " + sum);
+        System.out.println("Average      : " + average);
+    }
+
+    public static void main(String[] args) {
+        Student s = new Student();
+
+        s.get();
+        s.calculate();
+        s.display();
+    }
+}
